@@ -1,0 +1,16 @@
+.frame-4386 {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #e0e0e0;
+  border-width: 1px;
+  padding: 12px 18px 12px 18px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 747px;
+  position: absolute;
+  left: 97px;
+  top: 187px;
+}

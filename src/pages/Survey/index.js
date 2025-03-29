@@ -11,21 +11,27 @@ function Survey() {
       title: '질문 1 입니다',
       description: '설명입니다1. ',
       type: 'text',
-      options: {},
+      options: {
+        placeholder: 'placeholder 입니다.',
+      },
       required: false,
     },
     {
       title: '질문 2 입니다',
       description: '설명입니다2. ',
-      type: 'text',
-      options: {},
+      type: 'textArea',
+      options: {
+        placeholder: 'placeholder입니다. ',
+      },
       required: false,
     },
     {
       title: '질문 3 입니다',
       description: '설명입니다3. ',
-      type: 'text',
-      options: {},
+      type: 'select',
+      options: {
+        items: ['answer1', 'answer2', 'answer3', 'answer4', 'answer5'],
+      },
       required: false,
     },
   ];
@@ -46,6 +52,7 @@ function Survey() {
           setAnswers((answers) => {
             const newAnswers = [...answers];
             newAnswers[step] = newAnswer;
+
             return newAnswers;
           });
         }}
