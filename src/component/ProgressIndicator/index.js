@@ -1,7 +1,7 @@
 import './index.css';
 
 function ProgressIndicator() {
-  return <>p</>;
+  return <></>;
 }
 
 export default ProgressIndicator;

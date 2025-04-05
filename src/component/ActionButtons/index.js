@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import Button from '../Button';
 import './index.css';
 
 function ActionsButton({ step, questionsLength }) {
@@ -6,35 +8,42 @@ function ActionsButton({ step, questionsLength }) {
 
   const navigate = useNavigate();
   return (
-    <div>
+    <ActionButtonsWrapper>
       {step === 0 || (
-        <button
+        <Button
+          type="SECONDARY"
           onClick={(e) => {
             navigate(`${step - 1}`);
           }}
         >
           이전
-        </button>
+        </Button>
       )}
       {isLast ? (
-        <button
+        <Button
+          type="PRIMARY"
           onClick={(e) => {
             navigate('/completion');
           }}
         >
           제출
-        </button>
+        </Button>
       ) : (
-        <button
+        <Button
+          type="PRIMARY"
           onClick={(e) => {
             navigate(`${step + 1}`);
           }}
         >
           다음
-        </button>
+        </Button>
       )}
-    </div>
+    </ActionButtonsWrapper>
   );
 }
+
+const ActionButtonsWrapper = styled.div`
+  margin-top: 72px;
+`;
 
 export default ActionsButton;
