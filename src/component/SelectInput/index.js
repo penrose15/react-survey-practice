@@ -12,17 +12,17 @@ const Item = ({ children, onChange }) => {
   );
 };
 
-function SelectInput({ answers = [], setAnswers, options }) {
+function SelectInput({ answer = [], setAnswer, options }) {
   const items = options.items;
 
   const handleChange = (hasChecked, idx) => {
-    console.log(answers, idx, hasChecked);
+    console.log(answer, idx, hasChecked);
     if (hasChecked) {
-      const newAnswer = [...answers, idx];
-      setAnswers(newAnswer);
+      const newAnswer = [...answer, idx];
+      setAnswer(newAnswer);
       console.log(newAnswer);
     } else {
-      setAnswers(answers.filter((v) => v !== idx));
+      setAnswer(answer.filter((v) => v !== idx));
     }
   };
   return (

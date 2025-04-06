@@ -4,7 +4,7 @@ import TextAreaInput from '../TextAreaInput';
 import TextInput from '../TextInput';
 import './index.css';
 
-function Body({ children, type, answers, setAnswers, options }) {
+function Body({ children, type, answer, setAnswer, options }) {
   let InputComponent = null;
   if (type === 'select') {
     InputComponent = SelectInput;
@@ -18,8 +18,8 @@ function Body({ children, type, answers, setAnswers, options }) {
     <>
       <BodyWrapper>
         <InputComponent
-          answers={answers}
-          setAnswers={setAnswers}
+          answer={answer}
+          setAnswer={setAnswer}
           options={options}
         ></InputComponent>
       </BodyWrapper>
@@ -28,7 +28,8 @@ function Body({ children, type, answers, setAnswers, options }) {
 }
 
 const BodyWrapper = styled.div`
-  margin-left: 36px;
+  margin: 0px 36px;
+  flex: 1;
 `;
 
 export default Body;

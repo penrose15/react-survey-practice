@@ -1,22 +1,27 @@
 import styled from 'styled-components';
+import useCurrentAnswer from '../../hooks/useCurrentAnswer';
+import useCurrentQuestion from '../../hooks/useCurrentQuestion';
 import ActionsButton from '../ActionButtons';
 import Body from '../Body';
 import Description from '../Description';
 import Title from '../Title';
 import './index.css';
 
-function QuestionBox({ question, step, questionsLength, answers, setAnswers }) {
+function QuestionBox() {
+  const question = useCurrentQuestion();
+  const [answer, setAnswer] = useCurrentAnswer();
+
   return (
     <QuestionBoxWrapper>
       <Title>{question.title}</Title>
       <Description>{question.description}</Description>
       <Body
         type={question.type}
-        answers={answers}
-        setAnswers={setAnswers}
+        answer={answer}
+        setAnswer={setAnswer}
         options={question.options}
       />
-      <ActionsButton step={step} questionsLength={questionsLength} />
+      <ActionsButton />
     </QuestionBoxWrapper>
   );
 }
@@ -24,6 +29,7 @@ function QuestionBox({ question, step, questionsLength, answers, setAnswers }) {
 const QuestionBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 500px;
 `;
 
 export default QuestionBox;

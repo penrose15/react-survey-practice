@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 
-function TextAreaInput({ answers, setAnswers, options }) {
+function TextAreaInput({ answer, setAnswer, options }) {
   return (
     <TextArea
       type="text"
-      value={answers}
+      value={answer}
       placeholder={options.placeholder}
-      onChange={(e) => setAnswers(e.target.value)}
+      onChange={(e) => setAnswer(e.target.value)}
     ></TextArea>
   );
 }
 
 const TextArea = styled.textarea`
   border: 1px solid #e0e0e0;
+  width: 100%;
   border-radius: 5px;
   box-sizing: border-box; / 박스 사이즈 조절 방법
   font-size: 18px;
