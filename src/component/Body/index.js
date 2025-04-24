@@ -10,7 +10,7 @@ function Body({ children, type, answer, setAnswer, options }) {
     InputComponent = SelectInput;
   } else if (type === 'text') {
     InputComponent = TextInput;
-  } else if (type === 'textArea') {
+  } else if (type === 'textarea') {
     InputComponent = TextAreaInput;
   }
 

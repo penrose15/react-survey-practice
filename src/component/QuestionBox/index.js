@@ -8,18 +8,24 @@ import Title from '../Title';
 import './index.css';
 
 function QuestionBox() {
-  const question = useCurrentQuestion();
+  const questions = useCurrentQuestion();
   const [answer, setAnswer] = useCurrentAnswer();
+
+  console.log(questions);
+
+  if (!questions) {
+    return;
+  }
 
   return (
     <QuestionBoxWrapper>
-      <Title>{question.title}</Title>
-      <Description>{question.description}</Description>
+      <Title>{questions.title}</Title>
+      <Description>{questions.description}</Description>
       <Body
-        type={question.type}
+        type={questions.type}
         answer={answer}
         setAnswer={setAnswer}
-        options={question.options}
+        options={questions.options}
       />
       <ActionsButton />
     </QuestionBoxWrapper>

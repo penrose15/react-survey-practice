@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import styled from 'styled-components';
 import ProgressIndicator from '../../component/ProgressIndicator';
 import QuestionBox from '../../component/QuestionBox';
 
 function Survey() {
   return (
-    <SurveyWrapper>
-      <ProgressIndicator />
-      <QuestionBox />
-    </SurveyWrapper>
+    <Suspense fallback={<div>Loading...</div>}>
+      <SurveyWrapper>
+        <ProgressIndicator />
+        <QuestionBox />
+      </SurveyWrapper>
+    </Suspense>
   );
 }
 

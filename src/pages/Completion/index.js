@@ -5,6 +5,7 @@ import testWithComma from '../../stores/test/testWithComma';
 
 function Completion() {
   const test = useRecoilValue(testWithComma);
+
   return <CompletionWrapper>{test}</CompletionWrapper>;
 }
 
